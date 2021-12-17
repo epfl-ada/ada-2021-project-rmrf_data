@@ -20,9 +20,12 @@ We filter quotations from the "Quotebank" dataset via keywords (such as "cryptoc
 
 To conduct occupational analysis, we filter out representative speakers from Revised Quotebank with more than 3 quotations (75% percentile of all speakers) and manually correct and label their occupation information. This dataset is used in occupational analysis of both LDA topic modeling and sentiment analysis.
 
+- Speaker Attributes
+This dataset is used to extract out speaker's personal information provided based on Wikidata entities.
+
 - Bitcoin Price
 
-Bitcoin history price record is helpful with our analysis between the price and people’s general attitude. We select the history record from 2015-1-1 to 2020-4-30 from https://coinmarketcap.com/currencies/bitcoin/historical-data/ and drop the records that have zero quotation on that day because they are meaningless to our analysis of the relationship between bitcoin price and the number of quotations.  
+We select the Bitcoin history price record from 2015-1-1 to 2020-4-30 from https://coinmarketcap.com/currencies/bitcoin/historical-data/ and drop records that have zero quotation on specific days in Revised Quotebank because they are meaningless to our analysis of the relationship between bitcoin price and the number of quotations.  
 
 ## Methodology ##
 For both LDA Topic Modeling and sentiment analysis, we carry out general analysis (regardless of time) and separated analysis (within time periods). Separated  analysis accords the following separation:
@@ -38,15 +41,14 @@ For both LDA Topic Modeling and sentiment analysis, we carry out general analysi
 ### LDA Topic Modeling ##
 The Latent Dirichlet Allocation (LDA) is a generative statistical model for a collection of discrete data, firstly applied by Blei et al. [[1]](#1) in machine learning approach. LDA assumes that each document consists of a random mixture of latent topics and words under the attribution of these topics. It represents the topics through word distribution, words with the highest probabilities under a topic typically illustrate the major content of this topic. A latent topic comprises topic-words such as "transaction", "trade", and "wallet" is more likely to be labeled as "Cryptocurrency Trading". 
 
-We plan to train our LDA model by the following steps:
-- **Preprocessing**: We plan to split the original dataset on a 6-month period, then we will reserve only English quotes in the corpus and delete all non-English characters and punctuations. Also, we will tokenize the corpus and remove quotations with meaningless contents a ratio of punctuations and symbols. Before finalizing our corpus input, we exclude common stop-words and pronouns from the corpus and finally lemmatize the quotes in the corpus. With lemmatized tokens, we add unigrams, frequent bigrams and trigrams to expand our bag of words. The preprocessing step is carried out using [`spaCy`](https://github.com/explosion/spaCy) and ['nltk'](https://www.nltk.org/index.html). 
+- **Preprocessing**: We reserve only English quotes in the corpus and delete all non-English characters and punctuations. Then we tokenize the corpus and remove quotations with meaningless contents a ratio of punctuations and symbols. Before finalizing our corpus input, we exclude common stop-words and pronouns from the corpus and finally lemmatize the quotes in the corpus. With lemmatized tokens, we add unigrams, frequent bigrams and trigrams to expand our bag of words. The preprocessing step is carried out using [`spaCy`](https://github.com/explosion/spaCy) and ['nltk'](https://www.nltk.org/index.html). 
 
-- ***K*-Topic Model Evaluation**: We use topic coherence score *C<sub>v</sub>* [[2]](#2) to evaluate the model quality and performance roughly, a higher coherence score refers to better model implementation. We will use [`nltk`](https://www.nltk.org/index.html) to train LDA models with different number of topics *K* (e.g. *K*=4, 5, 6...) and select the best one with the highest *C<sub>v</sub>* score and the least overlap among latent topics for each subset. We use [`pyLDAvis`](https://github.com/bmabey/pyLDAvis) to visualize the inter-topical distance map in helping best-K determination. Model Evaluation is 
+- ***K*-Topic Model Evaluation**: We use topic coherence score *C<sub>v</sub>* [[2]](#2) to evaluate the model quality and performance roughly, a higher coherence score refers to better model implementation. We use [`nltk`](https://www.nltk.org/index.html) to train LDA models with different number of topics *K* (e.g. *K*=4, 5, 6...) and select the best one with the highest *C<sub>v</sub>* score and the least overlap among latent topics for each subset. We use [`pyLDAvis`](https://github.com/bmabey/pyLDAvis) to visualize the inter-topical distance map in helping best-K determination. 
 
-- ***K*-Topic Labeling**: After obtaining the topic cluster results of each subset, our group will discuss these topics and manually conclude topic words into descriptive , with each one presenting a list of most frequent words. We plan to further attribute these distinct topics to categories (e.g. General, Technical...) in general analysis.
+- ***K*-Topic Labeling**: After obtaining the topic cluster results of each subset, our group discuss these topic words and manually conclude them into sentences act as general and descriptive topics over the period, with each one presenting a crypto-related prospective from the quotations. We check through quotations to confirm these sentences represent what story happens behind the characters and tokens.
 
 ### Sentiment Analysis ##
-Sentiment Analysis is high-level textual mining that can extract and identify subjective information (e.g. attitude) from quotes. In this project, we plan to use [`Empath`](https://github.com/Ejhfast/empath-client) and [`VADER`](https://github.com/cjhutto/vaderSentiment) to classify the attitude information behind the quotes, combined with the date-processed Bitcoin price dataset to analyze the impact of speakers' attitudes to the fluctuation of Bitcoin price over the entire time period of the subsets. We will conduct sentiment analysis over both quote topic and speaker's attitude to lay a complete foundation for our final project data analysis.
+Sentiment Analysis is high-level textual mining that can extract and identify subjective information (e.g. attitude) from quotes. In this project, we use [`VADER`](https://github.com/cjhutto/vaderSentiment) to classify the general sentiment of speakers behind the quotations and how sentiments change over time separations. Then we carry out a similar analysis on speakers with two different occupations: businessperson and politician, which takes up the most quotations in Revised QuoteBank. Finally, combined with date-preprocessed Bitcoin price, we analyze how fluctuation of Bitcoin price correlates to speakers' sentiment towards cryptocurrency and how this correlation change within different periods.
 
 ## Timeline
 
@@ -67,10 +69,10 @@ Sentiment Analysis is high-level textual mining that can extract and identify su
 
 ## Team Organization
 
-- **Xianjie Dai**: searching & crawling supportive datasets, database problem solving, proposed graph plotting, and database problem solving
-- **Hanyuan Hu**: searching & crawling supportive datasets, consistency checking, and database problem digging, proposed data story writing
-- **Guanqun Liu**: problem formulation, finding algorithms & tools, report writing, proposed LDA model training, and sentiment analysis
-- **Yixuan Xu**: raising project idea, preliminary data preprocessing and analysis, proposed project coding-up and optimizing, proposed data visusalisation and web developing
+- **Xianjie Dai**: searching & crawling supportive datasets, webpage and interactive plot building
+- **Hanyuan Hu**: searching & crawling supportive datasets, data story writing and proof-reading
+- **Guanqun Liu**: problem formulation, finding algorithms & tools, sentiment analysis coding-up and visualization, interactive plot design
+- **Yixuan Xu**: raising project idea, data preprocessing & initial analysis, LDA topic modeling coding-up and visualization
 
 ## References
 <a id="1">[1]</a>
