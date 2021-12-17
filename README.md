@@ -1,5 +1,6 @@
-# Milestone 3 - ADA Class Project #
+# Milestone 3 - ADA Course Project #
 ***Cryptocurrency in Quote: Evolution of Cryptocurrency Topics and Sentimental Influence on Bitcoin Price***
+
 ## Data Story ##
 [Link to Website](https://xianjiedai.github.io/data_story/)
 
