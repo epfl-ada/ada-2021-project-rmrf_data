@@ -21,6 +21,7 @@ We filter quotations from the "Quotebank" dataset via keywords (such as "cryptoc
 To conduct occupational analysis, we filter out representative speakers from Revised Quotebank with more than 3 quotations (75% percentile of all speakers) and manually correct and label their occupation information. This dataset is used in occupational analysis of both LDA topic modeling and sentiment analysis.
 
 - Speaker Attributes
+- 
 This dataset is used to extract out speaker's personal information provided based on Wikidata entities.
 
 - Bitcoin Price
