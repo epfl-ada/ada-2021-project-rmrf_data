@@ -1,15 +1,17 @@
-# Milestone 2 - Project Proposal #
-***Bitcoin in Quote: Evolution of Bitcoin Topics and Sentimental Influence on Bitcoin Price***
+# Milestone 3 - ADA Class Project #
+***Cryptocurrency in Quote: Evolution of Bitcoin Topics and Sentimental Influence on Bitcoin Price***
 
 ## Abstract ##
+
+
 Bitcoin is undoubtedly today's winner of the cryptocurrency's market share, it has greatly changed people's way of investment and turned initial skepticism into acceptance even approval for its decentralized character. Followed by its increasing popularity, the price of Bitcoin experienced an exponential-like growth. However, people's attitude and confidence will have a great impact on Bitcoin price due to its incorporeity and opaqueness. Famous speakers' comments or attitudes will make clear this phenomenon: Elon Mask's comment of finding a Bitcoin substitute caused its price to drop by 4% on that day. Given Quotebank's comprehensiveness in collecting quotes from politicians and researchers, we want to discover how topics around Bitcoin changed over time and how sentiment towards Bitcoin in quotes correlates to the fluctuation of Bitcoin price by LDA topic modeling and sentiment analysis. Besides general analysis, we will conduct a comparative study on politicians and researchers to catch a glimpse of occupational differences on bitcoin topics and sentiments.
 
 ## Research Questions ##
-- What topics about Bitcoin are popular in Quotebank, what contents are included in each topic?
+- What topics about cryptocurrencies are popular in Quotebank, what contents are included under the topics?
 - How does the trend of topics about Bitcoin change over time?
-- How does the topic tread of technical speakers differs from financial speakers?
-- What sentiment/attitude does each topic present, how does politician/researcher comment on Bitcoin differently?
-- Does sentiment/attitude have a correlation with the fluctuation of Bitcoin price generally and for each topic?
+- How does the topic of cryptocurrencies differs between businessperson and politician?
+- What sentiment does crypto related quotations present, how does businessperson/politician comment on crypto differently?
+- Does sentiment towards crypto in quotations have a correlation with the fluctuation of Bitcoin price?
 
 ## Proposed Datasets ##
 - Revised Quotebank
@@ -38,13 +40,9 @@ We plan to train our LDA model by the following steps:
 ### Sentiment Analysis ##
 Sentiment Analysis is high-level textual mining that can extract and identify subjective information (e.g. attitude) from quotes. In this project, we plan to use [`Empath`](https://github.com/Ejhfast/empath-client) and [`VADER`](https://github.com/cjhutto/vaderSentiment) to classify the attitude information behind the quotes, combined with the date-processed Bitcoin price dataset to analyze the impact of speakers' attitudes to the fluctuation of Bitcoin price over the entire time period of the subsets. We will conduct sentiment analysis over both quote topic and speaker's attitude to lay a complete foundation for our final project data analysis.
 
-## Proposed Timeline
-
-
+## Timeline
 
 ![gantt](https://github.com/Hanyuan-Hu/ADA-HW1/raw/Master/Gantt%20Chart%20ADA.jpeg?raw=true)
-
-
 
 | Task                                       | Start      | End        | Duration | Dependencies | Assigned                 |
 | ------------------------------------------ | ---------- | ---------- | -------- | ------------ | ------------------------ |
