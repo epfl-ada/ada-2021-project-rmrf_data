@@ -2,9 +2,7 @@
 ***Cryptocurrency in Quote: Evolution of Bitcoin Topics and Sentimental Influence on Bitcoin Price***
 
 ## Abstract ##
-
-
-Bitcoin is undoubtedly today's winner of the cryptocurrency's market share, it has greatly changed people's way of investment and turned initial skepticism into acceptance even approval for its decentralized character. Followed by its increasing popularity, the price of Bitcoin experienced an exponential-like growth. However, people's attitude and confidence will have a great impact on Bitcoin price due to its incorporeity and opaqueness. Famous speakers' comments or attitudes will make clear this phenomenon: Elon Mask's comment of finding a Bitcoin substitute caused its price to drop by 4% on that day. Given Quotebank's comprehensiveness in collecting quotes from politicians and researchers, we want to discover how topics around Bitcoin changed over time and how sentiment towards Bitcoin in quotes correlates to the fluctuation of Bitcoin price by LDA topic modeling and sentiment analysis. Besides general analysis, we will conduct a comparative study on politicians and researchers to catch a glimpse of occupational differences on bitcoin topics and sentiments.
+Cryptocurrency is undoubtedly today's rising star of global market investments, it has greatly changed people's way of investment and turned initial skepticism into acceptance even approval for its decentralized character. Followed by its increasing popularity, price of major cryptos such as Bitcoin experienced an exponential-like growth. However, people's attitude and confidence will have a great impact on crypto price due to its incorporeity and opaqueness. Famous speakers' comments or attitudes will make clear this phenomenon: Elon Mask's comment of finding a Bitcoin substitute caused its price to drop by 4% on that day. Given Quotebank's comprehensiveness in collecting quotes from politicians and business people, we want to discover how topics around cryptocurrency changed over time by LDA topic modeling and how sentiment towards crypto in quotations may correlate to a typical crypto price (Bitcoin in our project) through sentiment analysis. Besides general analysis, we will conduct a comparative study on business people and politicians to catch a glimpse of occupational differences on topics and sentiments.
 
 ## Research Questions ##
 - What topics about cryptocurrencies are popular in Quotebank, what contents are included under the topics?
@@ -16,15 +14,15 @@ Bitcoin is undoubtedly today's winner of the cryptocurrency's market share, it h
 ## Proposed Datasets ##
 - Revised Quotebank
 
-Our team has filtered quotations from the "Quotebank" dataset via keywords: "bitcoin", "BTC", "crypto asset", "crypto currency", and we derived a dataset specifically for our project with 24150 quotations from 2015 to 2020. This dataset could be further split to rows with and without speakers, whereas the former one contains 4114 unique speakers. All the aforementioned statistics has indicates that the data size is sufficient for us to perform analaysis.
+We filter quotations from the "Quotebank" dataset via keywords (such as "cryptocurrency", "bitcoin", "btc", "crypto asset", etc.) and derive a crypto-related quotation dataset specifically for our project with 26,316 raw quotations from 2015 to 2020. 
 
-Another thing we have done in M2 is that, we merged speaker's attributes from wikidata into our dataset, and filled in values to replace label QID. However, in speaker attribute we have encountered the missing value issue, we will address this issue by manually locate the personal information for speaker with more than 3 quotations (3-quantile) via the speaker's name, quotation, and date of birth. Therefore, the dataset enables us to find answers for the proposed research questions.
+- Selected Speakers
+
+To conduct occupational analysis, we filter out representative speakers from Revised Quotebank with more than 3 quotations (75% percentile of all speakers) and manually correct and label their occupation information. This dataset is used in occupational analysis of both LDA topic modeling and sentiment analysis.
 
 - Bitcoin Price
 
-Bitcoin history price record is helpful with our analysis between the price and people’s general attitude. We select the history record from 2015-1-1 to 2020-4-30 from https://coinmarketcap.com/currencies/bitcoin/historical-data/ and abandon the record of the days that have zero quotation because they are meaningless to our analysis of the relationship between bitcoin price and the number of quotations (based on which we can have furture exploration on people's attitude using sentiment analysis and even more). 
-
-By comparing the BTC price figure and Frequency of BTC-related quotations figure from 2015 to 2020, we noticed that at the end of 2017 and the beginning of 2018, both figures have resembling trends. The number of quotations increases as the bitcoin price increases in general. This is the place where we can take future exploration of peoples's general attitude towards bitcoin and the topic of peoples's quotation, and then find our data stories.
+Bitcoin history price record is helpful with our analysis between the price and people’s general attitude. We select the history record from 2015-1-1 to 2020-4-30 from https://coinmarketcap.com/currencies/bitcoin/historical-data/ and drop the records that have zero quotation on that day because they are meaningless to our analysis of the relationship between bitcoin price and the number of quotations.  
 
 ## Methodology ##
 ### LDA Topic Modeling ##
