@@ -28,7 +28,7 @@ This dataset is used to extract out speaker's personal information provided base
 
 - Bitcoin Price
 
-We select the Bitcoin history price record from 2015-1-1 to 2020-4-30 from https://coinmarketcap.com/currencies/bitcoin/historical-data/ and drop records that have zero quotation on specific days in Revised Quotebank because they are meaningless to our analysis of the relationship between bitcoin price and the number of quotations.  
+We select the Bitcoin history price record from 2015-1-1 to 2020-4-30 from [coinmarketcap](https://coinmarketcap.com/currencies/bitcoin/historical-data/) and drop records that have zero quotation on specific days in Revised Quotebank because they are meaningless to our analysis of the relationship between bitcoin price and the number of quotations.  
 
 ## Methodology ##
 For both LDA Topic Modeling and sentiment analysis, we carry out general analysis (regardless of time) and separated analysis (within time periods). Separated  analysis accords the following separation:
@@ -76,6 +76,13 @@ Sentiment Analysis is high-level textual mining that can extract and identify su
 - **Hanyuan Hu**: searching & crawling supportive datasets, data story writing and proof-reading
 - **Guanqun Liu**: problem formulation, finding algorithms & tools, sentiment analysis coding-up and visualization, interactive plot design
 - **Yixuan Xu**: raising project idea, data preprocessing & initial analysis, LDA topic modeling coding-up and visualization
+
+## Files
+* `data/`: stores all datasets used for this project
+* `m3.ipynb`: **jupyter notebook for complete M3 project**
+* `initial_analysis.ipynb`: jupyter notebook for M2 initial analysis
+* `retrieve_btc_related`: jupyter notebook for keyword retrieval
+
 
 ## References
 <a id="1">[1]</a>
