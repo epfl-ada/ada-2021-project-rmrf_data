@@ -4,7 +4,7 @@
 ## Data Story ##
 [Link to Website](https://xianjiedai.github.io/data_story/)
 
-## Abstract ##
+## Introduction ##
 Cryptocurrency is undoubtedly today's rising star of global market investments, it has greatly changed people's way of investment and turned initial skepticism into acceptance even approval for its decentralized character. Followed by its increasing popularity, price of major cryptos such as Bitcoin experienced an exponential-like growth. However, people's attitude and confidence will have a great impact on crypto price due to its incorporeity and opaqueness. Famous speakers' comments or attitudes will make clear this phenomenon: Elon Mask's comment of finding a Bitcoin substitute caused its price to drop by 4% on that day. Given Quotebank's comprehensiveness in collecting quotes from politicians and business people, we want to discover how topics around cryptocurrency changed over time by LDA topic modeling and how sentiment towards crypto in quotations may correlate to a typical crypto price (Bitcoin in our project) through sentiment analysis. Besides general analysis, we will conduct a comparative study on business people and politicians to catch a glimpse of occupational differences on topics and sentiments.
 
 ## Research Questions ##
